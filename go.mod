@@ -1,4 +1,4 @@
-module go-docker-sprint-twelve
+module github.com/GoMarat/go-docker-sprint-twelve
 
 go 1.22.0
 
