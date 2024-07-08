@@ -1,15 +1,9 @@
-FROM golang:1.22.0
+FROM golang:1.22
 
-WORKDIR /go-docker-sprint-twelve
+WORKDIR /app
 
-COPY go.mod go.sum tracker.db ./
+COPY . .
 
-RUN go mod download 
+RUN go mod tidy
 
-COPY *.go ./
-
-ENV CGO_ENABLED=0 GOOS=linux GOARCH=amd64
-
-RUN go build -o /final
-
-CMD ["/final"]
+CMD ["/main"]
